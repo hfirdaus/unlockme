@@ -1,0 +1,72 @@
+
+
+#clock {
+  width: 350px;
+  margin:50px auto 0 auto;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #c7c7c9;
+  border: 35px #181819 solid;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+#clock .hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  border-radius: 40px;
+  height: 155px;
+  width: 5px;
+  background-color: #D85534;
+  z-index: 7;
+}
+#clock .m-hand {
+  height: 135px;
+  width: 10px;
+  background-color: #181819;
+  z-index: 8;
+}
+#clock .h-hand {
+  height: 100px;
+  width: 14px;
+  background-color: #181819;
+  z-index: 9;
+}
+#clock .randHand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  border-radius: 40px;
+}
+#clock .m-handRand {
+  height: 135px;
+  width: 10px;
+  background-color: #f46b42;
+  z-index: 5;
+}
+#clock .h-handRand {
+  height: 100px;
+  width: 14px;
+  background-color: #f46b42;
+  z-index: 4;
+}
+#clock .center {
+  background-color: #181819;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 6;
+}

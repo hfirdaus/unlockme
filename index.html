@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content="Max Kurapov">
+    <title>Max Kurapov</title>
+    <meta charset="utf-8"/>
+    <meta name="theme-color" content="#000">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="clock.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="mic.css">
+    <style>
+        body {
+            background: rgb(245, 211, 177);
+        }
+
+        .page {
+            position: absolute;
+            height:100%;
+            width: 100%;
+            display: none;
+            top:0;
+        }
+        
+        .title {
+            position: absolute;
+            top: 0;
+        }
+
+        #buttons-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 20px;
+            padding: 10px 15px;
+        }
+
+        .buttons {
+            height:25vh;
+        }
+    </style>
+</head>
+    <body>
+       
+        <div id="buttons-container">
+                <h1 class="title">CPSC 581 - Project 1</h1>
+            <div class="d-flex buttons align-items-center justify-content-around flex-column">
+                <button id="opensensor" class="button">Sensor</button>
+                <button id="opentouch" class="button">Touch</button>
+            </div>
+        </div>
+
+        <div id="clockPage" class="page">
+            <div id="clock">
+                    <div id="m-hand", class="m-hand hand"></div>
+                    <div id="h-hand", class="h-hand hand"></div>
+                    <div id="s-hand", class="s-hand hand"></div>
+                    
+                    <div id="m-handRand", class="m-handRand randHand"></div>
+                    <div id="h-handRand", class="h-handRand randHand"></div>
+                    
+                    <div class="center"></div>
+            </div>
+
+    </div>
+
+    <div id="micPage" class="page">
+        <div  class="container" >
+                <div class="row">
+                    <div class="invis col-4"></div>
+                    <div class="col-4" id="prompt"></div>
+                    <div class="invis col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="invis col-4"></div>
+                    <div class ="col-4" id="result"></div>
+                    <div class="invis col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="invis col-4"></div>
+                    <div class="col-4" id = "login"></div>
+                    <div class="invis col-4"></div>
+                </div>
+                <div class="row">
+                    <img id="micicon" src="https://cdn3.iconfinder.com/data/icons/glypho-music-and-sound/64/microphone-512.png">
+                </div>
+        </div>
+    </div>
+
+    </body>
+    <script src="voicerecog.js"></script>
+    <script src="clock.js"></script>
+    <script type="text/javascript">
+        const openSensor = document.getElementById('opensensor');
+        const openTouch = document.getElementById('opentouch');
+
+        const select = document.getElementById('buttons-container');
+
+        const micPage = document.getElementById('micPage');
+        const clockPage = document.getElementById('clockPage');
+        
+        openTouch.addEventListener('click', () => {
+            clockPage.style.display = 'block';
+            select.style.display = 'none';
+        })
+
+        openSensor.addEventListener('click', () => {
+            micPage.style.display = 'block';
+            select.style.display = 'none';
+        })
+    </script>
+</html>
