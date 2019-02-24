@@ -151,10 +151,9 @@ $(document).ready(function(){
 			return false;
 		}
 	}
-	
-	// Rotate the hands clockwise until in position
-	clock.onmousedown = function(){
-		
+
+
+	function run() {
 		if(hourCorrect == false)
 		{
     	timeout = setInterval(function(){
@@ -188,9 +187,15 @@ $(document).ready(function(){
 						}
 					}, 50);
 				}
-		};
-	
-	clock.onmouseup = function(){
-    clearInterval(timeout);
-	};
+	}
+
+	function end() {
+		clearInterval(timeout);
+	}
+	// Rotate the hands clockwise until in position
+	clock.ontouchstart = run;
+	clock.ontouchend = end;
+
+	clock.onmousedown = run;
+	clock.onmouseup = end;
 });
